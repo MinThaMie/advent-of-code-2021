@@ -9,6 +9,7 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.route('puzzles', function () {
     this.route('1');
+    this.route('2');
   });
   this.route('helpers');
 });
