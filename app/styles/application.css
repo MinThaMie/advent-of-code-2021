@@ -23,20 +23,21 @@
 --emph:    var(--base01);
 --comment: var(--base1);
 }
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 20px 40px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 code {
   background-color: var(--bg);
   color: var(--orange);
   display: inline-block;
   padding: 2px 5px;
-}
-
-pre code {
-  border: 2px solid var(--base1);
-  border-radius: 4px;
-  padding: 20px;
 }
 
 .navigation ul {
@@ -59,7 +60,21 @@ pre code {
   color: white;
 }
 
+.navigation ul a:last-child {
+  border: transparent;
+  float: right;
+}
+
 .navigation ul a:hover:not(:global(.active)) {
   box-shadow: 5px 5px 10px var(--violet);
 }
 
+.content-wrap {
+  flex-grow: 1;
+  padding: 20px 40px;
+}
+
+.footer {
+  padding: 10px 40px;
+  background-color: var(--bg);
+}

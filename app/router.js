@@ -10,4 +10,5 @@ Router.map(function () {
   this.route('puzzles', function () {
     this.route('1');
   });
+  this.route('helpers');
 });
