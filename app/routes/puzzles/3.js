@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 
+// BEGIN-SNIPPET day3-import
 export default class Puzzels3Route extends Route {
   async model() {
     let resIntro = await fetch('/inputs/day3/full.txt');
@@ -11,3 +12,4 @@ export default class Puzzels3Route extends Route {
     return { intro: introLines, lines: lines };
   }
 }
+// END-SNIPPET
