@@ -28,8 +28,8 @@ export default class Day3Component extends Component {
 
   // BEGIN-SNIPPET day3-solution2
   get solution2() {
-    let oxygen = parseInt(this.oxygen(this.args.file.lines),2);
-    let co2 = parseInt(this.co2(this.args.file.lines),2);
+    let oxygen = parseInt(this.oxygen(this.args.file.lines), 2);
+    let co2 = parseInt(this.co2(this.args.file.lines), 2);
     return `${oxygen * co2}`;
   }
 
