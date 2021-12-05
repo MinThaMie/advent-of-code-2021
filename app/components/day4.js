@@ -3,33 +3,7 @@ import Component from '@glimmer/component';
 export default class Day4Component extends Component {
   // cards are 5 x 5 so rows are index 0 - 4 5- 9 etc
   // cols are  [0,5,10,15,20], [1,6..] etc
-
-  checkRows(card) {
-    for (let rowIndex = 0; rowIndex < 5; rowIndex++) {
-      let rowToCheck = card.slice(rowIndex * 5, rowIndex * 5 + 5);
-      let sum = rowToCheck.reduce((a, b) => a + b, 0);
-      if (sum == 5) {
-        return true;
-      }
-    }
-  }
-
-  checkColumns(card) {
-    for (let colIndex = 0; colIndex < 5; colIndex++) {
-      let colToCheck = [
-        card[colIndex],
-        card[colIndex + 5],
-        card[colIndex + 10],
-        card[colIndex + 15],
-        card[colIndex + 20],
-      ];
-      let sum = colToCheck.reduce((a, b) => a + b, 0);
-      if (sum == 5) {
-        return true;
-      }
-    }
-  }
-
+  // BEGIN-SNIPPET day4-solution1
   get solution1() {
     let { numbers, cards } = this.args.file.lines;
     let state = Array(cards.length)
@@ -63,6 +37,35 @@ export default class Day4Component extends Component {
     }
     return result;
   }
+
+  checkRows(card) {
+    for (let rowIndex = 0; rowIndex < 5; rowIndex++) {
+      let rowToCheck = card.slice(rowIndex * 5, rowIndex * 5 + 5);
+      let sum = rowToCheck.reduce((a, b) => a + b, 0);
+      if (sum == 5) {
+        return true;
+      }
+    }
+  }
+
+  checkColumns(card) {
+    for (let colIndex = 0; colIndex < 5; colIndex++) {
+      let colToCheck = [
+        card[colIndex],
+        card[colIndex + 5],
+        card[colIndex + 10],
+        card[colIndex + 15],
+        card[colIndex + 20],
+      ];
+      let sum = colToCheck.reduce((a, b) => a + b, 0);
+      if (sum == 5) {
+        return true;
+      }
+    }
+  }
+  // END-SNIPPET
+
+  // BEGIN-SNIPPET day4-solution2
   get solution2() {
     let { numbers, cards } = this.args.file.lines;
     let state = Array(cards.length)
@@ -114,4 +117,5 @@ export default class Day4Component extends Component {
     }
     return result;
   }
+  // END-SNIPPET
 }
