@@ -1,10 +1,10 @@
-import Controller from '@ember/controller';
+import PuzzlesBaseController from './base';
 
-export default class Puzzles8Controller extends Controller {
+export default class Puzzles8Controller extends PuzzlesBaseController {
   // BEGIN-SNIPPET day8-solution1
-  get solution1() {
+  solve1(input) {
     let counter = 0;
-    this.model.full.forEach(([, outp]) => {
+    input.forEach(([, outp]) => {
       let segments = outp.split(' ');
       counter += segments.filter((s) => s.length <= 4 || s.length == 7).length;
     });
@@ -13,9 +13,9 @@ export default class Puzzles8Controller extends Controller {
   // END-SNIPPET
 
   // BEGIN-SNIPPET day8-solution2
-  get solution2() {
+  solve2(input) {
     let total = 0;
-    this.model.full.forEach(([inp, outp]) => {
+    input.forEach(([inp, outp]) => {
       let numToSeg = {};
       let segToNum = {};
       let outSegments = outp.split(' ');
@@ -83,21 +83,23 @@ export default class Puzzles8Controller extends Controller {
           }
         }
       });
-      let ordered = {}
+      let ordered = {};
       for (const [key, value] of Object.entries(segToNum)) {
         ordered[[...key].sort().join('')] = value;
       }
-      outSegments.forEach(seg => result.push(ordered[[...seg].sort().join('')]))
+      outSegments.forEach((seg) =>
+        result.push(ordered[[...seg].sort().join('')])
+      );
       total += parseInt(result.join(''));
     });
     return total;
   }
 
   includesNumber(seg, known) {
-    return [...known].every(x =>  seg.indexOf(x) > -1);
+    return [...known].every((x) => seg.indexOf(x) > -1);
   }
   filterNumber(seg, f) {
-    return [...seg].filter(c => !f.includes(c)).join('')
+    return [...seg].filter((c) => !f.includes(c)).join('');
   }
   // END-SNIPPET
 }
