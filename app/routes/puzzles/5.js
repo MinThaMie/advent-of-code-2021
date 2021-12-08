@@ -5,7 +5,6 @@ export default class Puzzels5Route extends Route {
     let parsed = [];
     parsed = file.replaceAll(' -> ', ' ').replaceAll(',', ' ');
     let lines = parsed.split('\n').map((e) => e.split(' '));
-    console.log(lines);
     return lines;
   }
 
@@ -15,7 +14,7 @@ export default class Puzzels5Route extends Route {
     let res = await fetch('/inputs/day5/full.txt');
     let fullFile = await res.text();
     return {
-      intro: this.parseInput(introFile),
+      example: this.parseInput(introFile),
       full: this.parseInput(fullFile),
     };
   }
