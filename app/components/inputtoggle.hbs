@@ -2,7 +2,8 @@
   <span>example</span>
   <div local-class="switch">
       <div local-class="bar"></div>
-      <div local-class="circle {{if this.input "right" "left"}}"></div>
+      <div local-class="circle {{if this.input "right" "left"}} {{if this.focused "focused" ""}}"></div>
   </div>
-  <input type="checkbox" id="input" name="input" value="input" checked={{this.input}} {{on 'click' this.toggle}}>personalised input
+  <input type="checkbox" id="input" name="input" value="input" checked={{this.input}} {{on 'click' this.toggle}} {{on 'focusin' this.handleFocusIn}}
+  {{on 'focusout' this.handleFocusOut}}>personalised input
 </label>

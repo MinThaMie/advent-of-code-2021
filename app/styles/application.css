@@ -43,16 +43,15 @@ code {
 
 .navigation ul {
   padding: 0;
-}
-@function random-pct() {
-  @return random(30) + 40%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .navigation ul a {
     border: 2px solid var(--violet);
     border-radius: 8px;
     padding: 8px 20px;
-    margin-right: 10px;
     color: var(--violet);
     font-size: 1.5em;
 }

@@ -39,4 +39,8 @@
   transition: transform .8s;
 }
 
+.circle.focused {
+  box-shadow: 0 0 8px var(--blue);
+}
+
 
