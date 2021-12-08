@@ -1,13 +1,12 @@
-import Component from '@glimmer/component';
+import PuzzlesBaseController from './base';
 
-export default class Day3Component extends Component {
+export default class Puzzles3Controller extends PuzzlesBaseController {
   // BEGIN-SNIPPET day3-solution1
-  get solution1() {
-    let providedInput = this.args.file.lines;
-    let majority = providedInput.length / 2 + 1;
-    let bits = providedInput[0].length;
+  solve1(input) {
+    let majority = input.length / 2 + 1;
+    let bits = input[0].length;
     let counter1 = new Array(bits).fill(0);
-    providedInput.forEach((e) => {
+    input.forEach((e) => {
       e.forEach((v, index) => {
         if (v == '1') {
           counter1[index] = counter1[index] + 1;
@@ -27,9 +26,9 @@ export default class Day3Component extends Component {
   // END-SNIPPET
 
   // BEGIN-SNIPPET day3-solution2
-  get solution2() {
-    let oxygen = parseInt(this.oxygen(this.args.file.lines), 2);
-    let co2 = parseInt(this.co2(this.args.file.lines), 2);
+  solve2(input) {
+    let oxygen = parseInt(this.oxygen(input), 2);
+    let co2 = parseInt(this.co2(input), 2);
     return `${oxygen * co2}`;
   }
 

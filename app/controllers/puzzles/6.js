@@ -1,25 +1,9 @@
-import Component from '@glimmer/component';
+import PuzzlesBaseController from './base';
 
-export default class Day6Component extends Component {
-  intro = [3, 4, 3, 1, 2];
-  full = [
-    2, 3, 1, 3, 4, 4, 1, 5, 2, 3, 1, 1, 4, 5, 5, 3, 5, 5, 4, 1, 2, 1, 1, 1, 1,
-    1, 1, 4, 1, 1, 1, 4, 1, 3, 1, 4, 1, 1, 4, 1, 3, 4, 5, 1, 1, 5, 3, 4, 3, 4,
-    1, 5, 1, 3, 1, 1, 1, 3, 5, 3, 2, 3, 1, 5, 2, 2, 1, 1, 4, 1, 1, 2, 2, 2, 2,
-    3, 2, 1, 2, 5, 4, 1, 1, 1, 5, 5, 3, 1, 3, 2, 2, 2, 5, 1, 5, 2, 4, 1, 1, 3,
-    3, 5, 2, 3, 1, 2, 1, 5, 1, 4, 3, 5, 2, 1, 5, 3, 4, 4, 5, 3, 1, 2, 4, 3, 4,
-    1, 3, 1, 1, 2, 5, 4, 3, 5, 3, 2, 1, 4, 1, 4, 4, 2, 3, 1, 1, 2, 1, 1, 3, 3,
-    3, 1, 1, 2, 2, 1, 1, 1, 5, 1, 5, 1, 4, 5, 1, 5, 2, 4, 3, 1, 1, 3, 2, 2, 1,
-    4, 3, 1, 1, 1, 3, 3, 3, 4, 5, 2, 3, 3, 1, 3, 1, 4, 1, 1, 1, 2, 5, 1, 4, 1,
-    2, 4, 5, 4, 1, 5, 1, 5, 5, 1, 5, 5, 2, 5, 5, 1, 4, 5, 1, 1, 3, 2, 5, 5, 5,
-    4, 3, 2, 5, 4, 1, 1, 2, 4, 4, 1, 1, 1, 3, 2, 1, 1, 2, 1, 2, 2, 3, 4, 5, 4,
-    1, 4, 5, 1, 1, 5, 5, 1, 4, 1, 4, 4, 1, 5, 3, 1, 4, 3, 5, 3, 1, 3, 1, 4, 2,
-    4, 5, 1, 4, 1, 2, 4, 1, 2, 5, 1, 1, 5, 1, 1, 3, 1, 1, 2, 3, 4, 2, 4, 3, 1,
-  ];
-
+export default class Puzzles6Controller extends PuzzlesBaseController {
   // BEGIN-SNIPPET day6-solution1
-  get solution1() {
-    let fish = [...this.full];
+  solve1(input) {
+    let fish = [...input];
     let spawn = [];
     for (let i = 0; i < 80; i++) {
       let newFish = fish.map((fish) => {
@@ -38,8 +22,8 @@ export default class Day6Component extends Component {
   // END-SNIPPET
 
   // BEGIN-SNIPPET day6-solution2
-  get solution2() {
-    let fish = [...this.full];
+  solve2(input) {
+    let fish = [...input];
     let uniqueFish = new Set(fish);
     let dict = {};
     uniqueFish.forEach((f) => (dict[f] = this.amountNewFish(256, f)));

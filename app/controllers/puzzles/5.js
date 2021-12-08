@@ -1,11 +1,11 @@
-import Component from '@glimmer/component';
+import PuzzlesBaseContoller from './base';
 
-export default class Day5Component extends Component {
+export default class Puzzles5Controller extends PuzzlesBaseContoller {
   // BEGIN-SNIPPET day5-solution1
-  get solution1() {
+  solve1(input) {
     let visitedOnce = new Set();
     let visitedMore = new Set();
-    this.args.file.full.map(([x1, y1, x2, y2]) => {
+    input.map(([x1, y1, x2, y2]) => {
       if (x1 == x2 || y1 == y2) {
         let coordinates = [];
         if (x1 !== x2) {
@@ -59,10 +59,10 @@ export default class Day5Component extends Component {
   // END-SNIPPET
 
   // BEGIN-SNIPPET day5-solution2
-  get solution2() {
+  solve2(input) {
     let visitedOnce = new Set();
     let visitedMore = new Set();
-    this.args.file.full.map(([x1, y1, x2, y2]) => {
+    input.map(([x1, y1, x2, y2]) => {
       let coordinates = [];
       if (x1 == x2 || y1 == y2) {
         if (x1 !== x2) {
