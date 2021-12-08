@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+}
+
+.container input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 250px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.switch {
+  margin: 0px 5px;
+  display: flex;
+  align-items: center;
+  width: 40px;
+}
+
+.circle.right {
+  transform: translateX(24px)
+}
+
+
+.bar {
+  width: 40px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: var(--base0);
+  position: absolute;
+}
+
+.circle {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: var(--violet);
+  z-index: 1;
+  transition: transform .8s;
+}
+
+

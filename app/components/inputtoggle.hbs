@@ -1,0 +1,8 @@
+<label local-class="container" for="input">
+  <span>example</span>
+  <div local-class="switch">
+      <div local-class="bar"></div>
+      <div local-class="circle {{if this.input "right" "left"}}"></div>
+  </div>
+  <input type="checkbox" id="input" name="input" value="input" checked={{this.input}} {{on 'click' this.toggle}}>personalised input
+</label>
