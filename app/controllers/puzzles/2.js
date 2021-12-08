@@ -1,20 +1,12 @@
-import Component from '@glimmer/component';
-import largeInput from '../inputs/day2';
+import PuzzlesBaseController from './base';
 
-export default class Day2Component extends Component {
-  input = [
-    ['forward', 5],
-    ['down', 5],
-    ['forward', 8],
-    ['up', 3],
-    ['down', 8],
-    ['forward', 2],
-  ];
+export default class Puzzles2Controller extends PuzzlesBaseController {
   // BEGIN-SNIPPET day2-solution1
-  get solution1() {
+  solve1(input) {
     let horizontalPos = 0;
     let depth = 0;
-    largeInput.forEach(([instruction, amount]) => {
+    input.forEach(([instruction, amount]) => {
+      amount = parseInt(amount);
       switch (instruction) {
         case 'forward':
           horizontalPos += amount;
@@ -29,9 +21,10 @@ export default class Day2Component extends Component {
     return horizontalPos * depth;
   }
 
-  get reduceSolution1() {
-    return largeInput.reduce(
+  reduceSolution1(input) {
+    return input.reduce(
       (prev, [instruction, amount]) => {
+        amount = parseInt(amount);
         let curr = { ...prev };
         switch (instruction) {
           case 'forward':
@@ -51,11 +44,12 @@ export default class Day2Component extends Component {
   }
   // END-SNIPPET
   // BEGIN-SNIPPET day2-solution2
-  get solution2() {
+  solve2(input) {
     let horizontalPos = 0;
     let depth = 0;
     let aim = 0;
-    largeInput.forEach(([instruction, amount]) => {
+    input.forEach(([instruction, amount]) => {
+      amount = parseInt(amount);
       switch (instruction) {
         case 'forward':
           horizontalPos += amount;
@@ -71,9 +65,10 @@ export default class Day2Component extends Component {
     return horizontalPos * depth;
   }
 
-  get reduceSolution2() {
-    return largeInput.reduce(
+  reduceSolution2(input) {
+    return input.reduce(
       (prev, [instruction, amount]) => {
+        amount = parseInt(amount);
         let curr = { ...prev };
         switch (instruction) {
           case 'forward':

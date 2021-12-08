@@ -1,20 +1,7 @@
-import Controller from '@ember/controller';
+import PuzzlesBaseController from './base';
 import { windowed } from '../../helpers/array';
 
-export default class Puzzles1Controller extends Controller {
-  get example1() {
-    return this.solve1(this.model.example);
-  }
-  get solution1() {
-    return this.solve1(this.model.full);
-  }
-  get example2() {
-    return this.solve2(this.model.example);
-  }
-  get solution2() {
-    return this.solve2(this.model.full);
-  }
-
+export default class Puzzles1Controller extends PuzzlesBaseController {
   // BEGIN-SNIPPET day1-solution1
   solve1(input) {
     let increased = 0;
