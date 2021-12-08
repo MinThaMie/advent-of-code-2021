@@ -15,5 +15,8 @@ indent_size = 2
 [*.hbs]
 insert_final_newline = false
 
+[*.txt]
+insert_final_newline = false
+
 [*.{diff,md}]
 trim_trailing_whitespace = false

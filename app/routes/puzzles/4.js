@@ -19,7 +19,6 @@ export default class Puzzels4Route extends Route {
         })
         .flat()
     );
-    cards[cards.length - 1].splice(-1); //remove the empty row
     let res = await fetch('/inputs/day4/full.txt');
     let file = await res.text();
     let lines = file.split('\n\n');
@@ -37,7 +36,6 @@ export default class Puzzels4Route extends Route {
         })
         .flat()
     );
-    fullCards[fullCards.length - 1].splice(-1); //remove the empty row
     return {
       intro: { numbers, cards },
       lines: { numbers: fullNumbers, cards: fullCards },

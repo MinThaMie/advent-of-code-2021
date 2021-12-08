@@ -4,7 +4,6 @@ export default class Puzzels5Route extends Route {
   parseInput(file) {
     let parsed = [];
     parsed = file.split('\n').map((line) => line.split(' | '));
-    parsed.splice(-1); // remove last empty new line
     return parsed;
   }
 
