@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 
 export default class Puzzels2Route extends Route {
   parseInput(file) {
-    return file.split('\n').map(e => e.split(' '));
+    return file.split('\n').map((e) => e.split(' '));
   }
 
   async model() {
