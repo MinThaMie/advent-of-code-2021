@@ -1,11 +1,9 @@
-import Component from '@glimmer/component';
+import PuzzlesBaseController from './base';
 
-export default class Day4Component extends Component {
-  // cards are 5 x 5 so rows are index 0 - 4 5- 9 etc
-  // cols are  [0,5,10,15,20], [1,6..] etc
+export default class Puzzles4Controller extends PuzzlesBaseController {
   // BEGIN-SNIPPET day4-solution1
-  get solution1() {
-    let { numbers, cards } = this.args.file.lines;
+  solve1(input) {
+    let { numbers, cards } = input;
     let state = Array(cards.length)
       .fill()
       .map(() => Array(25).fill(0));
@@ -66,8 +64,8 @@ export default class Day4Component extends Component {
   // END-SNIPPET
 
   // BEGIN-SNIPPET day4-solution2
-  get solution2() {
-    let { numbers, cards } = this.args.file.lines;
+  solve2(input) {
+    let { numbers, cards } = input;
     let state = Array(cards.length)
       .fill()
       .map(() => Array(25).fill(0));
