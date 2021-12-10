@@ -45,6 +45,7 @@
     "ember-fetch": "^8.1.1",
     "ember-load-initializers": "^2.1.2",
     "ember-maybe-import-regenerator": "^0.1.6",
+    "ember-mobile-menu": "^2.1.1",
     "ember-page-title": "^6.2.2",
     "ember-prism": "^0.12.0",
     "ember-qunit": "^5.1.4",
@@ -71,6 +72,7 @@
     "edition": "octane"
   },
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "webpack": "^5.64.4"
   }
 }
