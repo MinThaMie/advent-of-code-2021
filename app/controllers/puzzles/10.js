@@ -105,8 +105,8 @@ export default class Puzzles10Controller extends PuzzleBaseController {
       }
     });
     let scores = [];
-    incompletes.forEach(line => scores.push(this.scoreLine(line)));
-    scores = scores.sort((a,b) => a -b );
+    incompletes.forEach((line) => scores.push(this.scoreLine(line)));
+    scores = scores.sort((a, b) => a - b);
     return scores[Math.floor(scores.length / 2)];
   }
 
