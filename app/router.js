@@ -19,6 +19,8 @@ Router.map(function () {
     this.route('9');
     this.route('10');
     this.route('11');
+    this.route('12');
+    this.route('13');
   });
   this.route('helpers');
 });
