@@ -4,11 +4,11 @@ export default class Puzzles14Route extends Route {
   parseInput(file) {
     let [polymer, rules] = file.split('\n\n');
     let ruleDict = {};
-    rules.split('\n').map(r => {
+    rules.split('\n').map((r) => {
       let [pair, insert] = r.split(' -> ');
       ruleDict[pair] = insert;
     });
-    return {polymer, ruleDict};
+    return { polymer, ruleDict };
   }
 
   async model() {

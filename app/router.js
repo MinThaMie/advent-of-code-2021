@@ -22,6 +22,7 @@ Router.map(function () {
     this.route('12');
     this.route('13');
     this.route('14');
+    this.route('15');
   });
   this.route('helpers');
 });
