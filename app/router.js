@@ -24,6 +24,8 @@ Router.map(function () {
     this.route('14');
     this.route('15');
     this.route('16');
+    this.route('17');
+    this.route('18');
   });
   this.route('helpers');
 });
