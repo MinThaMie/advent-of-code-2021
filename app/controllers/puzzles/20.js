@@ -76,10 +76,4 @@ export default class Puzzles20Controller extends PuzzlesBaseContoller {
     return this.solve(text, 50);
   }
   // END-SNIPPET
-
-  print(matrix) {
-    for (let i = 0; i < matrix.length; i++) {
-      console.log(matrix[i].join(''));
-    }
-  }
 }
