@@ -30,6 +30,9 @@ Router.map(function () {
     this.route('19');
     this.route('21');
     this.route('22');
+    this.route('24');
+    this.route('23');
+    this.route('25');
   });
   this.route('helpers');
 });
