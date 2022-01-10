@@ -4,4 +4,9 @@ export function windowed(array, size) {
     array.slice(i, i + size)
   );
 }
+export function print(matrix) {
+  for (let i = 0; i < matrix.length; i++) {
+    console.log(matrix[i].join(''));
+  }
+}
 // END-SNIPPET
