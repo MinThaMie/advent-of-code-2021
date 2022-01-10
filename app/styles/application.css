@@ -41,6 +41,10 @@ code {
   padding: 2px 5px;
 }
 
+a {
+  color: var(--violet);
+}
+
 .navigation ul {
   padding: 0;
   display: flex;
@@ -53,7 +57,7 @@ code {
     border-radius: 8px;
     padding: 8px 20px;
     color: var(--violet);
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 .navigation ul a:global(.active) {
   background-color: var(--violet);
